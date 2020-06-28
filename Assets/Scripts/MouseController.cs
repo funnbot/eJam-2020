@@ -14,8 +14,10 @@ public class MouseController : MonoBehaviour {
             RaycastHit hit;
             if (MouseToWorldPos (out hit)) {
                 selected.transform.position = hit.point;
-                Debug.Log(hit.transform.name);
+
                 if (Input.GetMouseButtonUp (0) && hit.transform.CompareTag ("Cake")) {
+                    var cake = hit.transform.GetComponent<CakeController>();
+                    cake.AddDecoration(selected);
                     selected.transform.parent = cake.transform;
                     selected = null;
                 }

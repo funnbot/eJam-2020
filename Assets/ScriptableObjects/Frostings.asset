@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c68e6c57fa9b446aab7c9e5ba046df8, type: 3}
-  m_Name: Decorations
+  m_Script: {fileID: 11500000, guid: 284f296262c7944bf8b27e2f6c024443, type: 3}
+  m_Name: Frostings
   m_EditorClassIdentifier: 
-  decorations:
-  - name: Cherry
-    model: {fileID: 0}
-    cat: 0
+  frostings:
+  - color: 0
+    material: {fileID: 2100000, guid: 1efa347f4117548c8aefe1061c32a6d1, type: 2}

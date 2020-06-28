@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c68e6c57fa9b446aab7c9e5ba046df8, type: 3}
-  m_Name: Decorations
+  m_Script: {fileID: 11500000, guid: 432647f55fee347aca7e08b773c01b7b, type: 3}
+  m_Name: Customers
   m_EditorClassIdentifier: 
-  decorations:
-  - name: Cherry
-    model: {fileID: 0}
-    cat: 0
+  customers:
+  - species: 0
+    breed: 0
+    cakeType: 1
+    cakeFlavor: 0
+    frostingColor: 0
+    decorationCat: 0
