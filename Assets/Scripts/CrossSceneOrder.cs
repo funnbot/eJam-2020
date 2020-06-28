@@ -13,18 +13,22 @@ public class CrossSceneOrder : MonoBehaviour {
 
     public List<Decoration> cakeDecors;
 
+    public void GoToOrder() {
+        SceneManager.LoadScene(1);
+    }
+
     public void GoToBuild () {
-        SceneManager.LoadScene (1);
+        SceneManager.LoadScene (2);
     }
 
     public void GoToJudge () {
         Inst.cakeDecors = CakeController.Inst.CompileDecorations ();
-        SceneManager.LoadScene (2);
+        SceneManager.LoadScene (3);
     }
 
     public static CrossSceneOrder Inst;
     void Awake () {
-        if (Inst != null) throw new System.Exception ("Duplicate instance of singleton CrossSceneOrder");
+        if (Inst != null) Destroy(gameObject);
         Inst = this;
 
         DontDestroyOnLoad (this);
