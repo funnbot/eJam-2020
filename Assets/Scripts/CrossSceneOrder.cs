@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class CrossSceneOrder : MonoBehaviour {
     public Customer customer;
 
@@ -14,24 +13,20 @@ public class CrossSceneOrder : MonoBehaviour {
 
     public List<Decoration> cakeDecors;
 
-    public static void GoToOrder() {
-
+    public void GoToBuild () {
+        SceneManager.LoadScene (1);
     }
 
-    public static void GoToBuild() {
-
-    }
-
-    public static void GoToJudge() {
-        Inst.cakeDecors = CakeController.Inst.CompileDecorations();
-        SceneManager.LoadScene(0);
+    public void GoToJudge () {
+        Inst.cakeDecors = CakeController.Inst.CompileDecorations ();
+        SceneManager.LoadScene (2);
     }
 
     public static CrossSceneOrder Inst;
-    void Awake() {
-        if (Inst != null) throw new System.Exception("Duplicate instance of singleton CrossSceneOrder");
+    void Awake () {
+        if (Inst != null) throw new System.Exception ("Duplicate instance of singleton CrossSceneOrder");
         Inst = this;
-        
-        DontDestroyOnLoad(this);
+
+        DontDestroyOnLoad (this);
     }
 }

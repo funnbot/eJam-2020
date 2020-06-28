@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CakeController : MonoBehaviour {
-    public GameObject decorHolder;
+    public Transform decorHolder;
 
     void Start () {
         var c = CrossSceneOrder.Inst.customer;
@@ -19,15 +19,14 @@ public class CakeController : MonoBehaviour {
     }
 
     public void AddDecoration (GameObject dupe) {
-        dupe.transform.parent = decorHolder.transform;
+        dupe.transform.parent = decorHolder;
     }
 
     public List<Decoration> CompileDecorations () {
         var decorations = new List<Decoration> ();
-        Transform child;
-        while (child = transform.GetChild (0)) {
-            var cont = child.GetComponent<DecorationController> ();
-            decorations.Add (cont.type);
+        foreach (Transform child in decorHolder) {
+            var cont = child.GetComponent<DecorationController>();
+            decorations.Add(cont.type);
         }
         return decorations;
     }

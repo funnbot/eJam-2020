@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CakeStandController : MonoBehaviour {
-    Vector2 downPos;
+    public float rotSpeed;
 
     void Awake () {
 
@@ -12,7 +12,6 @@ public class CakeStandController : MonoBehaviour {
 
     public void OnPointerDown (PointerEventData eventData) {
         // if (!eventData.selectedObject.CompareTag("CakeStand")) return;
-        SetAngularY(0);
     }
 
     public void OnDrag (PointerEventData eventData) {
@@ -20,11 +19,11 @@ public class CakeStandController : MonoBehaviour {
         if (MouseController.IsHolding()) return;
         var delt = eventData.delta;
         var dir = -delt.x;
-        SetAngularY(dir);
+        Rotate(dir);
     }
 
-    void SetAngularY(float y) {
-        transform.Rotate(Vector3.up * y);
+    void Rotate(float y) {
+        transform.Rotate(Vector3.up * y * rotSpeed);
     }
 
     Vector3 MouseToWorld () {

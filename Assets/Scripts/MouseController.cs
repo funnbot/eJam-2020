@@ -16,9 +16,7 @@ public class MouseController : MonoBehaviour {
                 selected.transform.position = hit.point;
 
                 if (Input.GetMouseButtonUp (0) && hit.transform.CompareTag ("Cake")) {
-                    var cake = hit.transform.GetComponent<CakeController>();
-                    cake.AddDecoration(selected);
-                    selected.transform.parent = cake.transform;
+                    CakeController.Inst.AddDecoration(selected);
                     selected = null;
                 }
             }
