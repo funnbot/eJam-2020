@@ -5,11 +5,8 @@ using UnityEngine;
 public enum CakeType {
     SingleLayer,
     DoubleLayer,
-    TripleLayer,
     Bundt,
-    CupCake,
-    UpsideDown,
-    Sponge
+    Rectangle
 }
 
 public enum CakeFlavor {

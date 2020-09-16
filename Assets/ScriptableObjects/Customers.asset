@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customers:
   - species: 0
+    breed: 1
+    cakeType: 1
+    cakeFlavor: 0
+    frostingColor: 0
+    decorationCat: 4
+  - species: 0
+    breed: 1
+    cakeType: 1
+    cakeFlavor: 0
+    frostingColor: 0
+    decorationCat: 1
+  - species: 0
     breed: 0
     cakeType: 1
     cakeFlavor: 0
     frostingColor: 0
-    decorationCat: 0
+    decorationCat: 3
